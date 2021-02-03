@@ -1,0 +1,12 @@
+<h3>Page</h3>
+<h3>{{selected}}</h3>
+
+{{#stooges}}
+<ul>
+    <li onclick="page.hello('{{name}}')">{{name}}</li>
+</ul>
+{{/stooges}}
+
+<h3>{{cnt}}</h3>
+<button onclick="page.increment()">inc</button>
+

@@ -1,0 +1,146 @@
+<html>
+<head>
+    <title>Race Replica</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suzuki motorbikes of the 1980s: GSXR-400, GSXR-750, GS1000, GK71B, GR71F.">
+    <!-- VENDOR -->
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/EventEmitter/5.2.8/EventEmitter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.js"></script>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sintony:400,700" rel="stylesheet">
+    <!-- COMMON -->
+    <link rel="stylesheet" type="text/css" href="styles/grid.css">
+    <link rel="stylesheet" type="text/css" href="styles/site.css">
+    <link rel="stylesheet" type="text/css" href="components/home/home.css">
+    <link rel="stylesheet" type="text/css" href="components/about/about.css">
+    <link rel="stylesheet" type="text/css" href="components/photos/photos.css">
+    <link rel="stylesheet" type="text/css" href="components/specs/specs.css">
+    <link rel="stylesheet" type="text/css" href="components/articles/articles.css">
+    <link rel="stylesheet" type="text/css" href="styles/page.css">
+</head>
+<body>
+
+<div class="container">
+    <header class="site-header">
+        <!-- Sub Nav -->
+        <nav class="row site-header-sub-nav">
+            <div class="lg-col-span-6 site-header-sub-nav-left">
+                <h2>LAST UPDATED: SEPTEMBER 2020</h2>
+            </div>
+            <div class="lg-col-span-6 site-header-sub-nav-right">
+                <ul>
+                    <li>
+                        <a href="mailto:snapdragonxc@gmail.com?subject=Race%20Replica"><i class="fa fa-envelope"></i></a>
+                    </li>
+                    <li>
+                        <a href="#/home"><i class="fa fa-home"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Site Title  -->
+        <div class="row site-header-title">
+            <div class="lg-col-span-12">
+                <h1><a href="#/home">RACE REPLICA</a> </h1>
+            </div>
+        </div>
+        <div class="row site-header-sub-title">
+            <div class="lg-col-span-12">
+                <h2>EST. 2016</h2>
+            </div>
+        </div>
+        <!-- Site Nav -->
+        <nav class="row site-header-nav">
+            <div class="lg-col-span-9 site-header-nav-left">
+                <ul>
+                    <li><a href="#/articles">ARTICLES</a></li>
+                    <li><a href="#/photos">PHOTOGRAPHS</a></li>
+                    <li><a href="#/specs">SPECIFICATIONS</a></li>
+                    <li><a href="#/about">ABOUT</a></li>
+                    <li><a href="#/blog">#BLOG</a></li>
+                </ul>
+            </div>
+            <div class="lg-col-span-3 site-header-nav-right">
+                <form class="site-header-nav-right-search" onsubmit="search(event)">
+                    <input id="query" type="text" class="search-field" placeholder="SEARCH..." autocomplete="off" autocorrect="off" spellcheck="false" required>
+                    <button type='submit'><i class='fa fa-search'></i></button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <div id="root"></div>
+
+    <footer class="site-footer">
+        <div class="row">
+            <div class="lg-col-span-12">
+                COPYRIGHT <span>&copy;</span> RACE REPLICA 2018
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="mvc.js"></script>
+<script src="data.js"></script>
+<script src="components/page.js"></script>
+<script src="components/home/home.js"></script>
+<script src="components/about/about.js"></script>
+<script src="components/photos/photos.js"></script>
+<script src="components/specs/specs.js"></script>
+<script src="components/articles/articles.js"></script>
+<script>
+    const app = new MVC();
+    app.renderAt('#root');
+
+    app.get('/', function(){
+        this.render(home);
+    });
+
+    app.get('/home', function(){
+        this.render(home);
+    });
+
+    app.get('/about', function(){
+      this.render(about);
+    });
+
+    app.get('/photos', function(){
+      photos.setState({ selectedType: 'GSX400', selectedModel: 'ModelF_1983', page: 1 });
+      this.render(photos);
+    });
+
+    app.get('/photos/:type/:model/:page', function(params){
+      const { type, model, page } = params;
+      photos.setState({ selectedType: type, selectedModel: model, page: Number(page) });
+      this.render(photos);
+    });
+
+    app.get('/specs', function(){
+      specs.setState({ selectedType: 'GSX400', selectedModel: 'ModelF_1983' });
+      this.render(specs);
+    });
+
+    app.get('/specs/:type/:model', function(params){
+      const { type, model } = params;
+      specs.setState({ selectedType: type, selectedModel: model });
+      this.render(specs);
+    });
+
+    app.get('/articles', function(){
+      articles.setState({ selectedType: 'GSXR-400', selectedMagazine: 'Two_Wheels_Jan_85' });
+      this.render(articles);
+    });
+
+    app.get('/articles/:type/:magazine', function(params){
+      const { type, magazine } = params;
+      articles.setState({ selectedType: type, selectedMagazine: magazine });
+      this.render(articles);
+    });
+
+</script>
+</body>
+</html>

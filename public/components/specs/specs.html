@@ -1,0 +1,170 @@
+<header class="row page-header">
+    <div class="page-header-container">
+        <ul class="lg-col-span-12 page-header-filter">
+            <li>
+                <div class="page-select-container">
+                    <select class="page-select" onchange="specs.onTypeChange(this.value)" >
+                        {{#types}}
+                        <option value="{{type}}" {{selected}}>{{type}}</option>
+                        {{/types}}
+                    </select>
+                    <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
+                </div>
+            </li>
+            <li>
+                <div class="page-select-container">
+                    <select class="page-select" onchange="specs.onModelChange(this.value)">
+                        {{#models}}
+                        <option value="{{model}}" {{selected}}>{{model}}</option>
+                        {{/models}}
+                    </select>
+                    <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<article class="row specs-content">
+    <div class="specs-content-container">
+        <div class="lg-col-span-4 specs-content-col">
+            <table id="Engine">
+                <thead>
+                <tr><td colspan="2">ENGINE</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Configuration</td>        <td>{{engine.configuration}}</td></tr>
+                <tr><td>Type</td>                <td>{{engine.type}}</td></tr>
+                <tr><td>Valve train</td>        <td>{{engine.valveTrain}}</td></tr>
+                <tr><td>Cooling</td>            <td>{{engine.cooling}}</td></tr>
+                <tr><td>Valves per cylinder</td><td>{{engine.valvesPerCyl}}</td></tr>
+                <tr><td>No. of Cylinders</td>    <td>{{engine.numberCyl}}</td></tr>
+                <tr><td>Lubrication</td>        <td>{{engine.lubrication}}</td></tr>
+                <tr><td>Power</td>                <td>{{engine.power}}</td></tr>
+                <tr><td>Torque</td>            <td>{{engine.torque}}</td></tr>
+                <tr><td>Bore</td>                <td>{{engine.bore}}</td></tr>
+                <tr><td>Stroke </td>            <td>{{engine.stroke}}</td></tr>
+                <tr><td>Displacement</td>        <td>{{engine.displacement}}</td></tr>
+                <tr><td>Compression ratio</td>    <td>{{engine.compression}}</td></tr>
+                <tr><td>Maximum speed</td>        <td>{{engine.speed}}</td></tr>
+                <tr><td>Starter system</td>    <td>{{engine.starter}}</td></tr>
+                <tr><td>Air filtration</td>    <td>{{engine.filtration}}</td></tr>
+                <tr><td>Carburation</td>        <td>{{engine.carburation}}</td></tr>
+                <tr><td>Ignition</td>            <td>{{engine.ignition}}</td></tr>
+                </tbody>
+            </table>
+            <table id="FuelConsumption">
+                <thead>
+                <tr><td colspan="2">FUEL CONSUMPTION</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Hard riding</td><td>{{fuelCons.hard}}</td></tr>
+                <tr><td>Touring</td><td>{{fuelCons.tour}}</td></tr>
+                <tr><td>City</td><td>{{fuelCons.city}}</td></tr>
+                <tr><td>Average on test</td><td>{{fuelCons.avg}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="lg-col-span-4 specs-content-col">
+            <table>
+                <thead>
+                <tr><td colspan="2">DIMENSIONS</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Length</td><td>{{dimensions.length}}</td></tr>
+                <tr><td>Width</td><td>{{dimensions.width}}</td></tr>
+                <tr><td>Height</td><td>{{dimensions.height}}</td></tr>
+                <tr><td>Seat height</td><td>{{dimensions.seat}}</td></tr>
+                <tr><td>Wheelbase</td><td>{{dimensions.wheelbase}}</td></tr>
+                <tr><td>Ground clearance</td><td>{{dimensions.clearance}}</td></tr>
+                <tr><td>Dry mass</td><td>{{dimensions.mass}}</td></tr>
+                <tr><td>Fuel capacity (total)</td><td>{{dimensions.fuel}}</td></tr>
+                <tr><td>Fuel reserve</td><td>{{dimensions.reserve}}</td></tr>
+                <tr><td>Engine oil capacity</td><td>{{dimensions.oil}}</td></tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr><td colspan="2">TRANSMISSION</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Clutch</td><td>{{transmission.clutch}}</td></tr>
+                <tr><td>No of Gears</td><td>{{transmission.gears}}</td></tr>
+                <tr><td>Final Drive</td><td>{{transmission.drive}}</td></tr>
+                <tr><td>Primary Reduction</td><td>{{transmission.primary}}</td></tr>
+                <tr><td>Final Reduction</td><td>{{transmission.final}}</td></tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr><td colspan="2">GEAR RATIOS</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>First</td><td>{{gears.first}}</td></tr>
+                <tr><td>Second</td><td>{{gears.second}}</td></tr>
+                <tr><td>Third</td><td>{{gears.third}}</td></tr>
+                <tr><td>Fourth</td><td>{{gears.fourth}}</td></tr>
+                <tr><td>Fifth</td><td>{{gears.fifth}}</td></tr>
+                <tr><td>Sixth</td><td>{{gears.sixth}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="lg-col-span-4 specs-content-col">
+            <table>
+                <thead>
+                <tr><td colspan="2">CHASSIS</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Type</td><td>{{chassis.type}}</td></tr>
+                <tr><td>Swingarm</td><td>{{chassis.swingarm}}</td></tr>
+                <tr><td>Frame</td><td>{{chassis.frame}}</td></tr>
+                <tr><td>Fork rake</td><td>{{chassis.rake}}</td></tr>
+                <tr><td>Fork trail</td><td>{{chassis.trail}}</td></tr>
+                <tr><td>Front tyre</td><td>{{chassis.frontTyre}}</td></tr>
+                <tr><td>Rear tyre</td><td>{{chassis.rearTyre}}</td></tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr><td colspan="2">SUSPENSION</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Front</td><td>{{suspension.front}}</td></tr>
+                <tr><td>Rear</td><td>{{suspension.rear}}</td></tr>
+                <tr><td>Fork stroke</td><td>{{suspension.forkStroke}}</td></tr>
+                <tr><td>Rear wheel travel</td><td>{{suspension.rearWheelTravel}}</td></tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr><td colspan="2">BRAKES</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Front</td><td>{{brakes.front}}</td></tr>
+                <tr><td>Rear</td><td>{{brakes.rear}}</td></tr>
+                <tr><td>Front diameter</td><td>{{brakes.frontDiameter}}</td></tr>
+                <tr><td>Rear diameter</td><td>{{brakes.rearDiameter}}</td></tr>
+                </tbody>
+            </table>
+            <table>
+                <thead>
+                <tr><td colspan="2">PERFORMANCE</td></tr>
+                </thead>
+                <tbody>
+                <tr><td>Standing 400 m</td><td>{{performance.standing400}}</td></tr>
+                <tr><td>0 to 100 km/h</td><td>{{performance.timeTo100}}</td></tr>
+                <tr><td>Maximum speed</td><td>{{performance.speed}}</td></tr>
+                <tr><td>Stopping from 100 km/h</td><td>{{performance.stoppingFrom100}}</td></tr>
+                <tr><td>Stopping from 60 km/h</td><td>{{performance.stoppingFrom60}}</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</article>
+
+<footer class="row specs-footer">
+    <div class="specs-footer-container">
+        <div class="lg-col-span-12 specs-footer-content">
+        </div>
+    </div>
+</footer>

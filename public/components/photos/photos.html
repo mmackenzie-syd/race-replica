@@ -1,0 +1,53 @@
+<header class="row page-header">
+    <div class="page-header-container">
+        <ul class="lg-col-span-12 page-header-filter">
+            <li>
+                <div class="page-select-container">
+                    <select class="page-select" onchange="photos.onTypeChange(this.value)" >
+                        {{#types}}
+                        <option value="{{type}}" {{selected}}>{{type}}</option>
+                        {{/types}}
+                    </select>
+                    <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
+                </div>
+            </li>
+            <li>
+                <div class="page-select-container">
+                    <select class="page-select" onchange="photos.onModelChange(this.value)">
+                        {{#models}}
+                        <option value="{{model}}" {{selected}}>{{model}}</option>
+                        {{/models}}
+                    </select>
+                    <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<article class="row photos-content">
+    <div class="marker left">
+        <div class="marker-container photos"></div>
+        <div class="marker-arrow photos" onclick="photos.onPrevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+    </div>
+    <div class="marker right">
+        <div class="marker-container photos"></div>
+        <div class="marker-arrow photos" onclick="photos.onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    </div>
+    {{#images}}
+    <div class="lg-col-span-3">
+        <div class="photos-content-img-container">
+            <a target="_blank" href="{{href}}">
+                <img src="{{src}}">
+            </a>
+        </div>
+    </div>
+    {{/images}}
+</article>
+<footer class="row photos-footer">
+    <div class="photos-footer-container">
+        <div class="lg-col-span-12 photos-footer-content">
+            PAGE {{page}} OF {{pages}}
+        </div>
+    </div>
+</footer>
