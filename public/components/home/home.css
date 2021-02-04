@@ -185,7 +185,7 @@
 /* color buttons */
 .color-btn-container {
     padding: 0;
-    margin: 35px auto;
+    margin: 0 auto;
     width: 76px;
     box-sizing: border-box;
     overflow: hidden;
@@ -210,3 +210,10 @@
     cursor: pointer;
 }
 
+.home-divider {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 0;
+    height: 2px;
+    background-color: #999;
+}
