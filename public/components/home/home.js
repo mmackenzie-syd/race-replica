@@ -15,7 +15,7 @@ class Home extends View {
 
 const home = new Home();
 
-let bikeColor = 'BLACK'; // default color
+let bikeColor = 'RED'; // default color
 
 function setSlide() {
     const slide = document.getElementById("slider").value;

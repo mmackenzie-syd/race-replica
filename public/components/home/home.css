@@ -186,14 +186,14 @@
 .color-btn-container {
     padding: 0;
     margin: 35px auto;
-    width: 86px;
+    width: 76px;
     box-sizing: border-box;
     overflow: hidden;
 }
 .color-btn {
     float: left;
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     box-sizing: border-box;
 }
 
