@@ -3,24 +3,29 @@
         <div class="home-banner-container">
             <article class="lg-col-span-8 home-banner-left">
                 <div class="mainVisualItem" style="display: block;">
-                    <img src="img_1.png" alt="">
+                    <img id="img" src="slide/SV800MY20-BLACK17.png" alt="">
                 </div>
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <input
+                        type="range"
+                        id="slider"
+                        min="0"
+                        max="35"
+                        class="slider"
+                        oninput="setSlide()"
+                        value="17"
+                >
             </article>
             <aside class="lg-col-span-4 home-banner-right">
                 <div class="home-banner-right-welcome">
                     <h2>Superveloce 800</h2>
                     <p>Appearance tells the truth. With the Superveloce 800, it’s a neo-classic racer designed to be the most
-                        appealing bike by blending a perfect balance of modern forms and references from the past.
-                        Taking inspiration from MV Agusta’s racing history, the truth behind the appearance shows that nothing
+                        appealing bike by blending a perfect balance of modern forms and references from the past.</p>
+                    <p>Taking inspiration from MV Agusta’s racing history, the truth behind the appearance shows that nothing
                         escaped the designer’s eye in creating a highly functional and performance-oriented bike.</p>
-                    <!--<p>With MV Agusta’s racing traditions embedded in its
-                        heart, the Superveloce guarantees to supply unforgettable riding emotions on any road, and of course,
-                        any track!</p> -->
-                    <!--
-                    <p>Raw power in an evening dress. The Superveloce 800 is sophisticated yet dominating with its impressive power.
-                        It’s the perfect ride to arrive in style for the Grand Prix weekend in Monza!</p>
-                    -->
+                </div>
+                <div class="color-btn-container">
+                    <div class="color-btn color-btn-red" onclick="onBikeColorClick('RED')"></div>
+                    <div class="color-btn color-btn-black" onclick="onBikeColorClick('BLACK')"></div>
                 </div>
             </aside>
         </div>
@@ -38,3 +43,4 @@
         </div>
     </div>
 </div>
+
