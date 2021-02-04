@@ -71,4 +71,4 @@ var mainVisual ={
   }
 };
 
-mainVisual.setup();
+// mainVisual.setup();
