@@ -55,6 +55,6 @@
 }
 
 #articles {
-    min-height: 504px;
-    background-color: #f1f1f1;
+    height: 504px;
+    overflow: hidden;
 }

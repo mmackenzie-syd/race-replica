@@ -51,7 +51,7 @@ const MAGAZINES = {
     "Two_Wheels_Jul_85": 'gsxr400jul1985.html',
   },
   'GSXR-750': {
-    "Two_Wheels_1985": 'gsxr750aug.html',
+    "Two_Wheels_1985": 'gsxr750aug1985.html',
   },
   'GS1000': {
     'Two_Wheels_1980': 'gs1000feb1980.html',

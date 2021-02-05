@@ -16,9 +16,9 @@ class Articles extends View {
       const identifier = '.articles-content-col'
       document.getElementById('hiddenTxt').innerHTML = articles.file;
       PageAlgo.initialise(number_of_columns, desired_column_height, identifier);
+      PageAlgo.First();
       setTimeout(() => {
           PageAlgo.First();
-          document.getElementById('articles').style.backgroundColor = "#fff";
       }, 200);
   }
 
@@ -37,13 +37,13 @@ class Articles extends View {
   }
 
   onTypeChange(type) {
-    const model = Object.keys(DATA[type])[0];
+    const magazine = Object.keys(MAGAZINES[type])[0];
     app.goTo(`/articles/${type}/${magazine}`)
   }
 
-  onModelChange(model) {
+  onMagazineChange(magazine) {
     const type = this.state.selectedType;
-    app.goTo(`/articles/${type}/${model}`)
+    app.goTo(`/articles/${type}/${magazine}`)
   }
 
   getSelectedType(type, selectedType) {

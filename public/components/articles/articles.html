@@ -3,7 +3,7 @@
         <ul class="lg-col-span-12 page-header-filter">
             <li>
                 <div class="page-select-container">
-                    <select class="page-select" >
+                    <select class="page-select" onchange="articles.onTypeChange(this.value)">
                         {{#types}}
                         <option value="{{type}}" {{selected}}>{{type}}</option>
                         {{/types}}
@@ -13,9 +13,9 @@
             </li>
             <li>
                 <div class="page-select-container">
-                    <select class="page-select">
+                    <select class="page-select" onchange="articles.onMagazineChange(this.value)">
                         {{#magazines}}
-                        <option value="{{model}}" {{selected}}>{{magazine}}</option>
+                        <option value="{{magazine}}" {{selected}}>{{magazine}}</option>
                         {{/magazines}}
                     </select>
                     <div class="page-select-btn"><i class="fa fa-chevron-down"></i></div>
@@ -36,7 +36,7 @@
             <div class="marker-arrow" onclick="articles.onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
         </div>
         <div class="articles-content-cols" id="articles">
-            <div class="lg-col-span-3 articles-content-col">
+            <div class="lg-col-span-3 articles-content-col" id="firstCol">
                 <!-- this is required to get moustache (or chrome) to render properly. dont know why -->
                 <h1 style="visibility: hidden">&nbsp;</h1>
                 <p style="visibility: hidden">&nbsp;</p>
