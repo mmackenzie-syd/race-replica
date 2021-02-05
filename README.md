@@ -5,7 +5,7 @@ Race Replica is a website to test, develop and research single page applications
 
 Mustache itself, is descibed by its developers as a logic-less template syntax that can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object.
 
-Other single page apps using Mustache template have been built before,for example there is one described by Michael Wanyoike in 2018 at sitepoint:
+Other single page apps using Mustache template have been built before, for example there is one described by Michael Wanyoike in 2018 at sitepoint:
                 [Single Page App Without a Framework](https://www.sitepoint.com/single-page-app-without-framework/).
 
 There are a lot of client side routing libraries available, including [Vanilla Router](https://www.npmjs.com/package/vanilla-router), but I wanted to build my own with syntax based on the ExpressJS router and so the router used here is unique
