@@ -53,3 +53,8 @@
     font-weight: normal;
     margin-bottom: -20px;
 }
+
+#articles {
+    min-height: 504px;
+    background-color: #f1f1f1;
+}

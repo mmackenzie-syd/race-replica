@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Suzuki motorbikes of the 1980s: GSXR-400, GSXR-750, GS1000, GK71B, GR71F.">
+
     <!-- VENDOR -->
     <link rel="stylesheet" href="styles/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -92,8 +93,10 @@
 <script src="components/photos/photos.js"></script>
 <script src="components/specs/specs.js"></script>
 <script src="components/articles/articles.js"></script>
+<script src="components/articles/pageAlgo.js"></script>
 <script>
     const app = new MVC();
+    //
     app.renderAt('#root');
 
     app.get('/', function(){
@@ -142,5 +145,7 @@
     });
 
 </script>
+
+
 </body>
 </html>

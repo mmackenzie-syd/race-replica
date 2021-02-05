@@ -24,18 +24,23 @@
         </ul>
     </div>
 </header>
+<div id="hiddenTxt" style="display: none"></div>
 <article class="row articles-content">
     <div class="articles-content-container">
         <div class="marker left">
             <div class="marker-container"></div>
-            <div class="marker-arrow" onclick="onPrevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+            <div class="marker-arrow" onclick="articles.onPrevPage()"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
         </div>
         <div class="marker right">
             <div class="marker-container"></div>
-            <div class="marker-arrow" onclick="onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+            <div class="marker-arrow" onclick="articles.onNextPage()"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
         </div>
-        <div class="articles-content-cols">
-            <div class="lg-col-span-3 articles-content-col"></div>
+        <div class="articles-content-cols" id="articles">
+            <div class="lg-col-span-3 articles-content-col">
+                <!-- this is required to get moustache (or chrome) to render properly. dont know why -->
+                <h1 style="visibility: hidden">&nbsp;</h1>
+                <p style="visibility: hidden">&nbsp;</p>
+            </div>
             <div class="lg-col-span-3 articles-content-col"></div>
             <div class="lg-col-span-3 articles-content-col"></div>
             <div class="lg-col-span-3 articles-content-col"></div>
@@ -50,16 +55,6 @@
     </div>
 </footer>
 
-<!--
-<div id="hiddenTxt" style="display: none">{{file}}</div> -->
 
-<script>
-  // Sets the columns of the magazine using the page algorithm
-  // var number_of_columns = 4;
-  // var desired_column_height = 510; // in pxs
-  // var identifier = '.articles-content-col'
-  //
-  // PageAlgo.initialise(number_of_columns, desired_column_height, identifier);
-  //
-  // PageAlgo.First();        // go to first page
-</script>
+
+

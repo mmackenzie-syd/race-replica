@@ -44,6 +44,7 @@ class Photos extends View {
   }
 
   onNextPage () {
+      console.log('next page')
     const { selectedType, selectedModel, page } = this.state;
     const count = DATA[selectedType][selectedModel].imageCount;
     const nextPage = ((page + 1) * 8 > count) ? page : (page + 1);

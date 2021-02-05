@@ -56,16 +56,20 @@ class MVC extends EventEmitter {
         template: obj.template,
         txt,
       });
-      this.screenMap(obj, txt);
+      await this.screenMap(obj, txt);
+      console.log('called load')
+      obj.onLoad();
     } else {
       const txt = this.components[idx].txt;
-      this.screenMap(obj, txt);
+      await this.screenMap(obj, txt);
+      console.log('called non load')
+      obj.onLoad();
     }
   }
 
   async screenMap(obj, txt) {
     const view = await obj.view();
-    const html = Mustache.render(txt, view);
+    const html = await Mustache.render(txt, view);
     $(this.index).html(html);
   }
 
@@ -120,6 +124,10 @@ class View {
   constructor() {
     this.template = '';
     this.state = {};
+  }
+
+  onLoad() {
+
   }
 
   errorCheck() {
