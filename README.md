@@ -13,6 +13,7 @@ This website also features an algorithm to set a sequence of columns filled with
 
 The styling was copied directly from an old version of the [Haute Hijab](https://www.hautehijab.com/) ecommerce website (2016). However, Haute Hijab has changed substantially over the years and there is now little resemblance to it.
 
-Mark Mackenzie 
+Mark Mackenzie
+
 February 2021
 
