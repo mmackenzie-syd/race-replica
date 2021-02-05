@@ -8,6 +8,7 @@ class Articles extends View {
     this.loaded = false;
     this.next = false;
     this.prev = false;
+    this.pageNumber = 1;
   }
 
   onLoad() {
@@ -17,6 +18,7 @@ class Articles extends View {
       document.getElementById('hiddenTxt').innerHTML = articles.file;
       PageAlgo.initialise(number_of_columns, desired_column_height, identifier);
       PageAlgo.First();
+      this.pageNumber = 1;
       setTimeout(() => {
           PageAlgo.First();
       }, 200);
@@ -30,10 +32,18 @@ class Articles extends View {
 
   onPrevPage() {
       PageAlgo.Prev();
+      if (this.pageNumber - 1 > 0) {
+          this.pageNumber =  this.pageNumber - 1;
+          this.setPageNumber();
+      }
   }
 
   onNextPage() {
-      PageAlgo.Next();
+      const hasNext = PageAlgo.Next();
+      if (hasNext) {
+          this.pageNumber = this.pageNumber + 1;
+          this.setPageNumber();
+      }
   }
 
   onTypeChange(type) {
@@ -50,8 +60,8 @@ class Articles extends View {
     return ((type === selectedType) ?  { selected: 'selected' } : null);
   }
 
-  getSelectedMagazine(magazine, selectedMagazine) {
-    return ((model === selectedModel) ?  { selected: 'selected' } : null);
+  setPageNumber() {
+      document.getElementById('articles-page-number').innerText = this.pageNumber;
   }
 
   setState(state) {

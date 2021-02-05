@@ -169,7 +169,6 @@ var PageAlgo = (function(){
         for(var i = 0; i < max_number_col; i++){
             index[i] = 0;
         }
-        console.log('fmt', fmt)
         endOfDocument = false;
     };
     //
