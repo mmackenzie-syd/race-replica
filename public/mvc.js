@@ -57,12 +57,10 @@ class MVC extends EventEmitter {
         txt,
       });
       await this.screenMap(obj, txt);
-      console.log('called load')
       obj.onLoad();
     } else {
       const txt = this.components[idx].txt;
       await this.screenMap(obj, txt);
-      console.log('called non load')
       obj.onLoad();
     }
   }

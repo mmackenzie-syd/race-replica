@@ -6,10 +6,7 @@ class Home extends View {
   }
 
   view() {
-    return {
-      firstName: this.firstName,
-      lastName: 'Mackenzie',
-    };
+    return {};
   }
 }
 
