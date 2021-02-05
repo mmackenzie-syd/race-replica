@@ -22,6 +22,7 @@
     <link rel="stylesheet" type="text/css" href="components/specs/specs.css">
     <link rel="stylesheet" type="text/css" href="components/articles/articles.css">
     <link rel="stylesheet" type="text/css" href="components/search/search.css">
+    <link rel="stylesheet" type="text/css" href="components/blog/blog.css">
     <link rel="stylesheet" type="text/css" href="styles/page.css">
 </head>
 <body>
@@ -96,6 +97,7 @@
 <script src="components/articles/articles.js"></script>
 <script src="components/articles/pageAlgo.js"></script>
 <script src="components/search/search.js"></script>
+<script src="components/blog/blog.js"></script>
 <script>
     function onSearch(event) {
         event.preventDefault();
@@ -121,6 +123,10 @@
 
     app.get('/about', function(){
       this.render(about);
+    });
+
+    app.get('/blog', function(){
+        this.render(blog);
     });
 
     app.get('/photos', function(){
