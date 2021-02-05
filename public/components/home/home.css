@@ -23,7 +23,7 @@
 .home-banner-right {
     background-color: #bfc3c4;
     height: 500px;
-    padding-top: 60px;
+    padding-top: 50px;
     padding-left: 40px;
     padding-right: 70px;
 }
@@ -212,9 +212,17 @@
 }
 
 .home-divider {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     border: 0;
     height: 2px;
     background-color: #999;
+}
+
+.color-select {
+    margin-top: 15px;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
 }
