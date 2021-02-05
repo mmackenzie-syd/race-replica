@@ -21,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="components/photos/photos.css">
     <link rel="stylesheet" type="text/css" href="components/specs/specs.css">
     <link rel="stylesheet" type="text/css" href="components/articles/articles.css">
+    <link rel="stylesheet" type="text/css" href="components/search/search.css">
     <link rel="stylesheet" type="text/css" href="styles/page.css">
 </head>
 <body>
@@ -66,7 +67,7 @@
                 </ul>
             </div>
             <div class="lg-col-span-3 site-header-nav-right">
-                <form class="site-header-nav-right-search" onsubmit="search(event)">
+                <form class="site-header-nav-right-search" onsubmit="onSearch(event)">
                     <input id="query" type="text" class="search-field" placeholder="SEARCH..." autocomplete="off" autocorrect="off" spellcheck="false" required>
                     <button type='submit'><i class='fa fa-search'></i></button>
                 </form>
@@ -94,7 +95,18 @@
 <script src="components/specs/specs.js"></script>
 <script src="components/articles/articles.js"></script>
 <script src="components/articles/pageAlgo.js"></script>
+<script src="components/search/search.js"></script>
 <script>
+    function onSearch(event) {
+        event.preventDefault();
+        const query = document.getElementById("query").value;
+        if (query === '') {
+            return;
+        }
+        app.goTo(`/search/${query}`);
+        document.getElementById("query").value = '';
+    }
+
     const app = new MVC();
     //
     app.renderAt('#root');
@@ -142,6 +154,28 @@
       const { type, magazine } = params;
       articles.setState({ selectedType: type, selectedMagazine: magazine });
       this.render(articles);
+    });
+
+    app.get('/search/:query', function(params){
+        const { query } = params;
+
+        function isMatch(item) {
+            var i = item.query.search(query);
+            if(i != -1 ){
+                return item;
+            }
+        }
+
+        const matches = SEARCH_INDEX.filter(isMatch);
+
+        let items = [];
+
+        for (let i = 0; i < matches.length; i++) {
+            const articles = matches[i].articles;
+            items = items.concat(articles);
+        }
+        search.setState({ query, items });
+        this.render(search);
     });
 
 </script>

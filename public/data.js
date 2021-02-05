@@ -59,3 +59,36 @@ const MAGAZINES = {
     'Sports_Bike': 'gs1000may1984.html',
   }
 };
+
+const SEARCH_INDEX = [{
+        query: 'suzuki gsx400, suzuki gsx 400',
+        articles: [{title: 'Two Wheels 1982', lnk: '#/articles/GSX400/Two_Wheels_1982'}],
+    }, {
+        query: 'suzuki gsxr400, suzuki gsxr 400, suzuki gsx-r400, suzuki gsx-r 400',
+        articles: [ {
+                title: 'AMCN 1984',
+                lnk: '#/articles/GSXR-400/AMCN_1984'
+            }, {
+                title: 'Two Wheels Jan 85',
+                lnk: '#/articles/GSXR-400/Two_Wheels_Jan_85',
+            }, {
+                title: "Two Wheels Jul 85",
+                lnk: '#/articles/GSXR-400/Two_Wheels_Jul_85'
+            }]
+    }, {
+        query: 'suzuki gsxr750, suzuki gsxr 750, suzuki gsx-r750, suzuki gsx-r 750',
+        articles: [{title: 'Two Wheels Aug 85', lnk: '#/articles/GSXR-750/Two_Wheels_1985'}],
+    }, {
+        query: 'suzuki gs1000, suzuki gs 1000',
+        articles: [{
+                title: 'Classic Motor Bikes',
+                lnk: '#/articles/GS1000/Classic_Motor_Bikes'
+            }, {
+                title: 'Two Wheels 1980',
+                lnk: '#/articles/GS1000/Two_Wheels_1980'
+            }, {
+                title: 'Sports Bike',
+                lnk: '#/articles/GS1000/Sports_Bike'
+        }],
+    }
+];

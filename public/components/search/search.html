@@ -1,0 +1,13 @@
+<div class="search" style="height: 500px">
+    <div class="row">
+        <div class="lg-col-span-12 search-content">
+            <h2>Search results for '{{query}}'</h2>
+            <ul class="search-list">
+                {{#items}}
+                <li><a href={{lnk}}>{{title}}</a></li>
+                {{/items}}
+            </ul>
+            <p class="search-message">{{message}}</p>
+        </div>
+    </div>
+</div>
