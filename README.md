@@ -1,6 +1,6 @@
 # race-replica
 
-Race Replica is a website to test, develop and research single page applications built without one of the big Frameworks, such as React or Angular. It achieves this using the (https://github.com/janl/mustache.js/)[Mustache] template rendering library and a custom built router to navigate between pages.
+Race Replica is a website to test, develop and research single page applications built without one of the big Frameworks, such as React or Angular. It achieves this using the [https://github.com/janl/mustache.js/](Mustache) template rendering library and a custom built router to navigate between pages.
 
 Mustache itself, is descibed by its developers as a logic-less template syntax that can be used for HTML, config files, source code - anything. It works by expanding tags in a template using values provided in a hash or object.
 
