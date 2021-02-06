@@ -24,6 +24,40 @@
     <link rel="stylesheet" type="text/css" href="components/search/search.css">
     <link rel="stylesheet" type="text/css" href="components/blog/blog.css">
     <link rel="stylesheet" type="text/css" href="styles/page.css">
+
+    <!-- loader -->
+    <style>
+        #root {
+            opacity: .5;
+        }
+        .loader {
+            border: 10px solid #ddd; /* 16px solid #f3f3f3; */
+            border-radius: 50%;
+            border-top: 10px solid #cc0000; /* 16px solid #3498db; */
+            width: 50px;/* 120px; */
+            height: 50px; /* 120px; */
+            -webkit-animation: spin 2s linear infinite; /* Safari */
+            animation: spin 2s linear infinite;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-wrap {
+            position: absolute;
+            left: 42%;
+            top: 420px;
+            z-index: 4000;
+        }
+    </style>
 </head>
 <body>
 
@@ -77,6 +111,9 @@
     </header>
 
     <div id="root"></div>
+    <div class="loader-wrap" id="loader">
+        <div class="loader"></div>
+    </div>
 
     <footer class="site-footer">
         <div class="row">
@@ -85,6 +122,38 @@
             </div>
         </div>
     </footer>
+</div>
+
+
+<!-- pre-load slide images -->
+<div class="hidden">
+    <script type="text/javascript">
+        const  preload = async function(path) {
+            const arr = [];
+            for (let i = 0; i < path.length; i++) {
+                const prom = new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = () => resolve(img);
+                    img.onerror = (err) => reject(err);
+                    img.src = path[i];
+                });
+                arr.push(prom);
+            }
+            Promise.all(arr).then(() => {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById("root").style.opacity = '1';
+            });
+        }
+
+        const images = [];
+        for (let i = 0; i < 36; i++) {
+            const red = `http://race-replica-v2.s3-website-ap-southeast-2.amazonaws.com/slide/SV800MY20-RED${i}.png`;
+            const black = `http://race-replica-v2.s3-website-ap-southeast-2.amazonaws.com/slide/SV800MY20-BLACK${i}.png`;
+            images.push(red);
+            images.push(black);
+        }
+        preload(images);
+    </script>
 </div>
 
 <script src="mvc.js"></script>
