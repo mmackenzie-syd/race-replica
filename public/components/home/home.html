@@ -2,11 +2,17 @@
 <div class="home">
     <div class="row home-banner">
         <div class="home-banner-container">
+
             <article class="lg-col-span-8 home-banner-left">
                 <div class="mainVisualItem" style="display: block;">
                     <img id="img" src="slide/SV800MY20-RED17.png" alt="">
                 </div>
-                <div class="slider-container">
+
+                <div class="slide-btn-wrap">
+                    <button class="btn-slide btn-slide-left" onclick="prevSlide()"><i class="slide-home-arrow slide-home-left"></i></button>
+                    <button class="btn-slide btn-slide-right" onclick="nextSlide()"><i class="slide-home-arrow slide-home-right"></i></button>
+                </div>
+       <!--         <div class="slider-container">
                     <input
                             type="range"
                             id="slider"
@@ -17,7 +23,7 @@
                             value="17"
                     >
                     <p class="slider-caption"><i class="home-arrow home-left"></i> 0 - 360 <i class="home-arrow home-right"></i></p>
-                </div>
+                </div> -->
 
             </article>
             <aside class="lg-col-span-4 home-banner-right">
@@ -29,11 +35,11 @@
                         escaped the designer’s eye in creating a highly functional and performance-oriented bike.</p>
                 </div>
                 <hr class="home-divider"/>
-         <!--       <div class="color-btn-container">
+                <div class="color-btn-container">
                     <div class="color-btn color-btn-red" onclick="onBikeColorClick('RED')"></div>
                     <div class="color-btn color-btn-black" onclick="onBikeColorClick('BLACK')"></div>
                 </div>
-                <div class="color-select">SELECT COLOR</div> -->
+                <div class="color-select">SELECT COLOR</div>
             </aside>
         </div>
     </div>
