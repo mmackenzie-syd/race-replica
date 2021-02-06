@@ -23,3 +23,11 @@ February 2021
 
 
 ![alt text](https://github.com/mmackenzie-syd/race-replica/blob/master/screenshots/home.png)
+
+![alt text](https://github.com/mmackenzie-syd/race-replica/blob/master/screenshots/articles.png)
+
+![alt text](https://github.com/mmackenzie-syd/race-replica/blob/master/screenshots/photos.png)
+
+![alt text](https://github.com/mmackenzie-syd/race-replica/blob/master/screenshots/specifications.png)
+
+
