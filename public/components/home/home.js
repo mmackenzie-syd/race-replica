@@ -35,7 +35,7 @@ function onInput() {
     setSlide();
 }
 
-function prevSlide() {
+function nextSlide() {
     console.log('clicked')
     if ((slide - 1) > -1) {
         slide = slide -1;
@@ -45,7 +45,7 @@ function prevSlide() {
     }
 }
 
-function nextSlide() {
+function prevSlide() {
     if ((slide + 1) < 36) {
         slide = slide + 1;
         const img = document.getElementById('img');
