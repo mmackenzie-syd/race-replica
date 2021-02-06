@@ -47,7 +47,7 @@ function prevSlide() {
 
 function nextSlide() {
     if ((slide + 1) < 36) {
-        slide = slide + 2;
+        slide = slide + 1;
         const img = document.getElementById('img');
         const src = `slide/SV800MY20-${bikeColor}${slide}.png`
         img.src = src;
