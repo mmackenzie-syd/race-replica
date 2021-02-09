@@ -183,10 +183,12 @@
     app.renderAt('#root');
 
     app.get('/', function(){
+        home.setState({ slide: 17, bikeColor: 'RED' });
         this.render(home);
     });
 
     app.get('/home', function(){
+        home.setState({ slide: 17, bikeColor: 'RED' });
         this.render(home);
     });
 

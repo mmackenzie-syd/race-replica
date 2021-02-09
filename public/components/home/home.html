@@ -2,15 +2,15 @@
 <div class="home">
     <div class="row home-banner">
         <div class="home-banner-container">
-
             <article class="lg-col-span-8 home-banner-left">
                 <div class="mainVisualItem" style="display: block;">
+                  <!--  <img id="img"  alt=""> --this way caused flicker -->
                     <img id="img" src="slide/SV800MY20-RED17.png" alt="">
                 </div>
 
                 <div class="slide-btn-wrap">
-                    <button class="btn-slide btn-slide-left" onclick="prevSlide()"><i class="slide-home-arrow slide-home-left"></i></button>
-                    <button class="btn-slide btn-slide-right" onclick="nextSlide()"><i class="slide-home-arrow slide-home-right"></i></button>
+                    <button class="btn-slide btn-slide-left" onclick="home.prevSlide()"><i class="slide-home-arrow slide-home-left"></i></button>
+                    <button class="btn-slide btn-slide-right" onclick="home.nextSlide()"><i class="slide-home-arrow slide-home-right"></i></button>
                 </div>
        <!--         <div class="slider-container">
                     <input
@@ -36,8 +36,8 @@
                 </div>
                 <hr class="home-divider"/>
                 <div class="color-btn-container">
-                    <div class="color-btn color-btn-red" onclick="onBikeColorClick('RED')"></div>
-                    <div class="color-btn color-btn-black" onclick="onBikeColorClick('BLACK')"></div>
+                    <div class="color-btn color-btn-red" onclick="home.onBikeColorClick('RED')"></div>
+                    <div class="color-btn color-btn-black" onclick="home.onBikeColorClick('BLACK')"></div>
                 </div>
                 <div class="color-select">SELECT COLOR</div>
             </aside>
